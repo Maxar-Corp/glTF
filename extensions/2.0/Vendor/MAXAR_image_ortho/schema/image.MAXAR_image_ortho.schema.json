@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "MAXAR_image_ortho image extension",
+  "type": "object",
+  "description": "glTF extension that allows specifying an image as being orthographically projected",
+  "allOf": [{
+      "$ref": "glTFProperty.schema.json"
+    }
+  ],
+  "properties": {
+    "transform": {
+      "type": "array",
+      "description": "The offset of the UV coordinate origin as a factor of the texture dimensions expressed as a 2x3 affine transformation matrix.",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 6,
+      "maxItems": 6,
+      "default": [1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
+    },
+    "srs": {
+      "type": "object",
+      "$ref": "srs.schema.json"
+      "description": "The spatial reference system"
+    },
+  },
+  "required": ["srs"]
+}
