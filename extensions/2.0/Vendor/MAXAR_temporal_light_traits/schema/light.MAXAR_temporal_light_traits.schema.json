@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "MAXAR_temporal_light_traits light extension",
+  "type": "object",
+  "description": "glTF extension to KHR_lights_punctual for specifying the temporal traits for individual lights",
+  "allOf": [{
+      "$ref": "glTFProperty.schema.json"
+    }
+  ],
+  "properties": {
+    "flashing": {
+      "type": "object",
+      "description": "The flashing trait describes a simple flashing pattern that can be characterized by a waveform type and frequency.",
+      "properties": {
+        "amplitudeOffset": {
+          "description": "Offset amplitude from default range",
+          "type": "number",
+          "default": 0.0
+        },
+        "amplitudeScale": {
+          "description": "Scale amplitude from default range",
+          "type": "number",
+          "default": 1.0
+        },
+        "duty": {
+          "description": "Portion of period the light is on as normalized value, only applicable for square waveforms",
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 0.5
+        },
+        "frequency": {
+          "description": "Frequency of the waveform (Hz)",
+          "type": "number",
+          "minimum": 0.0,
+          "exclusiveMinimum": true
+        },
+        "phaseOffset": {
+          "description": "Frequency offset (seconds)",
+          "type": "number",
+          "default": 0.0
+        },
+        "waveform": {
+          "description": "Shape of waveform",
+          "type": "string",
+          "enum": ["sine", "square", "triangle"]
+        }
+      },
+      "required": ["waveform", "frequency"]
+    }
+  }
+}
