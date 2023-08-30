@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "MAXAR_nonvisual_geometry mesh primitive extension",
+  "type": "object",
+  "description": "Describes intended usage of this nonvisual mesh primitive.",
+  "allOf": [{
+      "$ref": "glTFProperty.schema.json"
+    }
+  ],
+  "properties": {
+    "shape": {
+      "type": "string",
+      "enum": ["points", "path", "surface", "volume"],
+      "description": "The shape of the nonvisual geometry specified in the primitive."
+    },
+    "type": {
+      "type": "string",
+      "description": "The intended usage of this nonvisual mesh primitive."
+    },
+    "extensions": {},
+    "extras": {}
+  },
+  "required": [
+    "shape",
+    "type"
+  ]
+}
