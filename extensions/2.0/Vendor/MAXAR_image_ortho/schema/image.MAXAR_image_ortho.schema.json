@@ -10,7 +10,7 @@
   "properties": {
     "transform": {
       "type": "array",
-      "description": "The offset of the UV coordinate origin as a factor of the texture dimensions expressed as a 2x3 affine transformation matrix.",
+      "description": "Transformation which is used to convert from world space to pixel space expressed as a 2x3 affine transformation matrix.",
       "items": {
         "type": "number"
       },
@@ -20,9 +20,9 @@
     },
     "srs": {
       "type": "object",
-      "$ref": "srs.schema.json"
+      "$ref": "srs.schema.json",
       "description": "The spatial reference system"
-    },
+    }
   },
   "required": ["srs"]
 }

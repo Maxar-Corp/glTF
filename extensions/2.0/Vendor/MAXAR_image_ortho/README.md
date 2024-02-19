@@ -23,14 +23,13 @@ The ability to know that an image is orthographically projected can simplify som
 
 The extension consists of a transformation which is used to convert from world space to pixel space and the spatial reference system that was used to project the image.
 
-The transformation is defined using a 2x3 affine transform matrix that operates on normalized image coordinates normalized to the [0, 1] range, (i.e the image has its top left 
-edge at 0,0 and its bottom right edge at 1,1).
+The transformation is defined using a 2x3 affine transform matrix that operates on raw pixel coordinates in the image.
 
-The 2x3 affine transformation matrix can also be expressed as a 3x3 affine transformation matrix. Normalized pixel to world transformation can be done using the following formula:
+The 2x3 affine transformation matrix can also be expressed as a 3x3 affine transformation matrix. Raw pixel to world transformation can be done using the following formula:
 
 ```
-                                     [a c e]   [X_pixel_normalized]   [X_world]
-XY_world = M * XY_pixel_normalized = [b d f] * [Y_pixel_normalized] = [Y_world]
+                                     [a c e]   [X_pixel_coordinate]   [X_world]
+XY_world = M * XY_pixel_coordinate = [b d f] * [Y_pixel_coordinate] = [Y_world]
                                      [0 0 1]   [1]                    [1]
 
 Where a, b, c, d, e and f are the values from the 2x3 affine transformation matrix specified in that order.
@@ -38,8 +37,8 @@ Where a, b, c, d, e and f are the values from the 2x3 affine transformation matr
 
 The above can also be expressed as:
 ```
-X_world = X_pixel_normalized * a + Y_pixel_normalized * c + e
-Y_world = X_pixel_normalized * b + Y_pixel_normalized * d + f
+X_world = X_pixel_coordinate * a + Y_pixel_coordinate * c + e
+Y_world = X_pixel_coordinate * b + Y_pixel_coordinate * d + f
 ```
 
 Only the transformations defined on the image itself are necessary to visualize the image at its correct position. The image may be used by the glTF too, but in scenarios where only the image is needed, this enables optimizing those operations.
