@@ -65,7 +65,7 @@ By default, both geodetic coordinate systems and S2 coordinate systems utilize I
       "mimeType": "image/jpeg",
       "extensions ": {
         "MAXAR_image_ortho": {
-          "transform": [0.0, 0.01599, -0.01599, 0.01599, 0.0, 3445535.5, 618827.0],
+          "transform": [0.0, -0.01599, 0.01599, 0.0, 3445535.5, 618827.0],
           "srs": {
             "referenceSystem": "WGS84-G1762",
             "epoch": "2005.0",
