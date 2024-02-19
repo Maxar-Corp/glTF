@@ -9,7 +9,7 @@
 
 ## Status
 
-Draft - **Version 0.0.1**, March 30, 2023
+Draft - **Version 0.0.2**, February 19, 2024
 
 ## Dependencies
 
