@@ -23,9 +23,9 @@ The ability to know that an image is orthographically projected can simplify som
 
 The extension consists of a transformation which is used to convert from world space to pixel space and the spatial reference system that was used to project the image.
 
-The transformation is defined using a 2x3 affine transform matrix that operates on raw pixel coordinates in the image.
+The transformation is defined using a 2x3 affine transform matrix that operates on pixel coordinates in the image.
 
-The 2x3 affine transformation matrix can also be expressed as a 3x3 affine transformation matrix. Raw pixel to world transformation can be done using the following formula:
+The 2x3 affine transformation matrix can also be expressed as a 3x3 affine transformation matrix. Pixel to world transformation can be done using the following formula:
 
 ```
                                      [a c e]   [X_pixel_coordinate]   [X_world]
