@@ -66,12 +66,15 @@ By default, both geodetic coordinate systems and S2 coordinate systems utilize I
       "mimeType": "image/jpeg",
       "extensions ": {
         "MAXAR_image_ortho": {
-          "transform": [0.0, -0.01599, 0.01599, 0.0, 3445535.5, 618827.0],
+          "transform": [0.0, 8.1875, -8.1875, 0.0, 3542945.276954, 782027.09375],
           "srs": {
-            "referenceSystem": "WGS84-G1762",
-            "epoch": "2005.0",
-            "coordinateSystem": "UTM31N",
-            "elevation": "ELLIPSOID"
+            "referenceSystem": "ITRF2008",
+            "epoch": "2005.00",
+            "coordinateSystem": "UTM14N",
+            "elevation": "ELLIPSOID",
+            "axis": "NED",
+            "unitHorizontal": "METER",
+            "unitVertical": "METER"
           }
         }
       }
