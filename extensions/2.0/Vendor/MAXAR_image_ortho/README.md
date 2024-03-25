@@ -31,11 +31,12 @@ The 2x3 affine transformation matrix can also be expressed as a 3x3 affine trans
                                      [a c e]   [X_pixel_coordinate]   [X_world]
 XY_world = M * XY_pixel_coordinate = [b d f] * [Y_pixel_coordinate] = [Y_world]
                                      [0 0 1]   [1]                    [1]
-
-Where a, b, c, d, e and f are the values from the 2x3 affine transformation matrix specified in that order.
 ```
 
+Where `a`, `b`, `c`, `d`, `e` and `f` are the values from the 2x3 affine transformation matrix specified in that order.
+
 The above can also be expressed as:
+
 ```
 X_world = X_pixel_coordinate * a + Y_pixel_coordinate * c + e
 Y_world = X_pixel_coordinate * b + Y_pixel_coordinate * d + f
